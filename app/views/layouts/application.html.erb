@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>nProv</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="description" content="Amazon EC2 Manager" />
+  <meta name="keywords" content="ec2, amazon, aws, hosting, elastic, manager" />
+  <link rel="stylesheet" href="/stylesheets/master.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+  <script type="text/javascript" charset="utf-8">
+    function searchBarFocus(){}
+  </script>
+  <%= yield :head -%>
+</head>
+<body onload="searchBarFocus();">
+
+<!--[if IE]>
+<style>
+fieldset { position: relative; padding-top: 30px; }
+legend { position: absolute;top: -.5em;left: .2em; }
+</style>
+<![endif]-->
+<!--[if IE 6]>
+<style>
+#NavLinks { position: relative; top: 3px; }
+</style>
+<![endif]-->
+
+<div id="MenuHeader">
+	<div>
+		<div id="NavLinks">
+			<a href="/"><img src="/images/welcome_u.gif" alt="Home"/></a><a href="/features"><img src="/images/menu_features_c.gif" alt="nProv Features"/></a><a href="/dashboard"><img src="/images/menu_dashboard_a.gif" alt="Dashboard" /></a><a href="/support"><img src="/images/menu_support_b.gif" alt="Help &amp; Support"/></a>
+		</div>
+		<div id="Logo">
+			<a href="/"><img src="/images/logo.gif" alt="nProv, EC2 Management" style="padding: 0px;margin:0px;"/></a>
+			<a href="/learn"><img src="/images/learn_more.gif" alt="Learn more about nProv" class="PostJobsImg"/></a>
+		</div>
+	</div>
+	<%= yield :toolbar -%>
+</div>
+<%= yield -%>
+</body>
+</html>

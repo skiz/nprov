@@ -1,0 +1,44 @@
+<% toolbar do -%>
+<%= link_to 'Create Pledge', new_pledge_path, :class => 'white' %>
+<a href="new">x</a>
+ [SEARCH PLEDGE]
+ [MY PLEDGES]
+<% end -%>
+
+<% layout do -%>
+  <% body do -%>
+  
+    <% banner do -%>
+      nProv developers are committed to providing the community with the best management solution possible. To achieve this
+      goal, we have created a pledging system which allows them to be rewarded for contributing code to the nProv system. By
+      placing a pledge, you are furthering the development of nProv and paying developers to create your requested features.
+      If you are interested in becoming an nProv developer, please visit the <a href="#">Developers Corner</a>.
+    <% end -%>
+    
+    <% panel :size => 'XL', :title => 
+      '<span class="T1"><a href="#">Feature Request</a>&nbsp; <a href="#"><img src="/images/arrowupblue.gif" border="0" alt="Sort Ascending" /></a><img src="./images/dot.gif" width="4" border="0" /><a href="#"><img src="/images/arrowdownblue.gif" border="0" alt="Sort Descending" /></a></span>
+       <span class="T2"><a href="#">Pledge</a>&nbsp; <a href="#"><img src="/images/arrowupblue.gif" border="0" alt="Sort Ascending" /></a><img src="./images/dot.gif" width="4" border="0" /><a href="#"><img src="/images/arrowdownblue.gif" border="0" alt="Sort Descending" /></a></span>
+       <span class="T3"><a href="#">Pledgor</a>&nbsp; <a href="#"><img src="/images/arrowupblue.gif" border="0" alt="Sort Ascending" /></a><img src="./images/dot.gif" width="4" border="0" /><a href="#"><img src="/images/arrowdownblue.gif" border="0" alt="Sort Descending" /></a></span>						
+       <span class="T4"><a href="#">Date</a>&nbsp; <a href="#"><img src="/images/arrowupblue.gif" border="0" alt="Sort Ascending" /></a><img src="./images/dot.gif" width="4" border="0" /><a href="#"><img src="/images/arrowdownbluefill.gif" border="0" alt="Sort Descending" /></a></span>' do -%>
+      
+      <% for pledge in @pledges do %>
+        <div class="<%= cur = cycle("Bg0", "Bg1", :name => "row_class") -%>" onmouseover="this.className = 'Highlight';" onmouseout="this.className = '<%= cur -%>';" onClick="document.location.href = '#';">
+            <span class="C1"><%= link_to h(pledge.description), pledge_path(pledge) %></span>
+            <span class="C2"><%= h(pledge.amount_in_cents)%></span>
+            <span class="C3"><%= h(pledge.name)%></span>
+            <span class="C4"><%= h(pledge.created_at.to_date)%></span>
+        </div>
+      <% end -%>
+      
+      <% if @pledges.blank? -%>
+        <div class="Bg0" onmouseover="this.className = 'Highlight';" onmouseout="this.className = 'Bg0';" onClick="document.location.href = '#';">
+          <span class="C1">No Pledges Found. <%= link_to 'Please pledge your support', '#' %></span>
+          <span class="C2">&nbsp;</span>
+          <span class="C3">&nbsp;</span>
+          <span class="C4">&nbsp;</span>
+        </div>
+      <% end -%>
+    <% end -%>
+    
+  <% end -%>
+<% end -%>

@@ -1,0 +1,76 @@
+<% content_for :toolbar do -%>
+<div id="Toolbar">
+	<div id="ToolbarOuterContainer">
+		<div id="ToolbarInnerContainer">
+			<div id="ToolbarActions">
+        <!-- <%= link_to(image_tag('create_farm.gif', :alt => 'Create Farm'), new_farm_path, :class => 'menubar')%> -->
+			</div>
+		</div>
+	</div>
+</div>
+<% end -%>
+<div id="PageLayout">
+	<div id="PageContainer">
+		<div class="BodyContainer">
+		  <div id="BannerContainerSmall">
+    		<div id="BannerTextSmall" style="font-size:1em;line-height:1.2em">
+    		  	Creating a farm is the first step in deploying your application. This farm will have the ability to contain
+    		  	as many servers as you may require. A farm is defined in this application as a related group of servers.
+    		  	You will have the ability to start and stop an entire farm at will. Generally you will only need one farm
+    		  	per application.
+    		</div>		
+    	</div>
+    	
+    	<center>
+  			<div class="XL">
+
+  				<div class="XLContainer">
+  					<div class="XLTitle">
+  						Create a new farm
+  					</div>
+  					<div class="XLBody">
+  						<div class="LargePad NearWhiteBG">
+  						  
+  						  <div class="float-right" style="width: 425px;">
+          			  <font class="bigbluetext"><b>How to set-up a server farm:</b></font>
+							    <ol>
+              			<li>Name your farm, but each farm must have a distinct name.</li>
+              			<li>Enter your account information and AWS access keys.</li>
+              			<li>Upload both your private and public certificate files as required.</li>
+              			<li>Click submit, and your farm will be instantly configured.</li>
+                  </ol>
+              		
+            		</div>
+            		
+            		<div style="width: 425px;">
+            		  <% form_for :farm do |f| -%>
+            		  <style type="text/css" media="screen">
+            		    .InputArea label {font-size:1.2em;line-height:3em;vertical-align:middle;}
+            		  </style>
+            		    <div class="InputArea">
+                      <label>Farm Name:</label>
+                      <img src="/images/input_l_l.gif" alt="" /><%= f.text_field :name, :class => 'InputBox' %><img src="/images/input_l_r.gif" alt="" /><br />
+
+                      <label>Account ID:&nbsp;</label>
+                      <img src="/images/input_l_l.gif" alt="" /><%= f.text_field :name, :class => 'InputBox' %><img src="/images/input_l_r.gif" alt="" /><br />
+
+                      <label>Access Key:</label>
+                      <img src="/images/input_l_l.gif" alt="" /><%= f.text_field :name, :class => 'InputBox' %><img src="/images/input_l_r.gif" alt="" /><br />
+
+                      <label>Secret Key:&nbsp;</label>
+                      <img src="/images/input_l_l.gif" alt="" /><%= f.text_field :name, :class => 'InputBox' %><img src="/images/input_l_r.gif" alt="" />
+      						  
+            		    </div>
+            		  <% end -%>
+                </div>
+                <div class="clear"></div>
+  		        </div>
+  		      </div>
+  		    </div>
+  		  </div>
+    	
+    </div>
+  </div>
+</div>
+
+<%= render :partial => 'shared/footer' %>

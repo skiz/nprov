@@ -1,0 +1,16 @@
+<% toolbar do -%>
+  <%= link_to(image_tag('create_farm.gif', :alt => 'Create Farm'), new_farm_path, :class => 'menubar')%>
+<% end -%>
+
+<% layout do -%>
+  <% body do -%>
+    <% panel :size => 'XL', :title => 'Your Server Farms' do -%>
+      <div class="LargePad WhiteBG">
+        <% for farm in @farms -%>
+          <%= link_to h(farm.name), farm_path(farm) %><br />
+        <% end -%>
+        <%="No Farms Found" if @farms.blank? -%>
+      </div>
+    <% end -%>
+  <% end -%>
+<% end -%>

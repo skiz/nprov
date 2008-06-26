@@ -1,0 +1,42 @@
+<% toolbar do -%>
+ [SEARCH PLEDGE]
+ [MY PLEDGES]
+<% end -%>
+
+<% layout do -%>
+  <% body do -%>
+
+    <% banner do -%>
+      nProv developers are committed to providing the community with the best management solution possible. To achieve this
+      goal, we have created a pledging system which allows them to be rewarded for contributing code to the nProv system. By
+      placing a pledge, you are furthering the development of nProv and paying developers to create your requested features.
+      If you are interested in becoming an nProv developer, please visit the <a href="#">Developers Corner</a>.
+    <% end -%>
+    
+    <div class="center" style="margin-top:3.5em">
+      <center>
+        <% panel :size => 'L', :title => 'Pledge Your Support' do -%>
+        <div class="LargePad NearWhiteBG">
+          <% form_for :pledge, :url => pledges_path do |p| -%>
+            <div class="InputArea">
+              <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your Name:</label>
+              <img src="/images/input_l_l.gif" alt="" /><%= p.text_field :name, :class => 'InputBox' %><img src="/images/input_l_r.gif" alt="" /><br /><br />
+              <label>Email Address:</label>
+              <img src="/images/input_l_l.gif" alt="" /><%= p.text_field :email, :class => 'InputBox' %><img src="/images/input_l_r.gif" alt="" /><br /><br />
+
+              <label>&nbsp;&nbsp;&nbsp;Total Pledge:</label>
+              <img src="/images/input_l_l.gif" alt="" /><%= p.text_field :amount_in_cents, :class => 'InputBox' %><img src="/images/input_l_r.gif" alt="" /><br /><br />
+
+              <label>&nbsp;&nbsp;&nbsp;&nbsp;Pledge Title:</label>
+              <img src="/images/input_l_l.gif" alt="" /><%= p.text_field :description, :class => 'InputBox' %><img src="/images/input_l_r.gif" alt="" /><br />
+            </div>
+        
+            <%= submit_tag 'Make A Pledge', :style => 'margin-left:245px;font-size:1.5em;margin-top:0.5em'%>
+          <% end -%>
+        </div>
+        <% end -%>
+      </center>
+    </div>
+    
+  <% end -%>
+<% end -%>

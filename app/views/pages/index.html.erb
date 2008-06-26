@@ -1,0 +1,213 @@
+<% toolbar do %>
+  <a class="menubar" href="/signup"><img src="images/create_account.gif" alt="Create a Startup Tech Jobs Posting Account"/></a>
+  <a class="menubar" href="/login"><img src="/images/login.gif" alt="Login to nProv"/></a>
+<% end -%>
+
+<% layout :skip_footer => true do -%>
+  <% banner do -%>
+    <a href="/">nProv</a> is an open-source cloud management solution for deployment and scaling within the
+    Amazon EC2 cloud. Our goal is to provide a solid management platform which rivals commercial solutions
+    costing several thousand dollars. This is made possible by the support of the community leveraging a
+    unique pledging system to reward contributors.
+  <% end -%>
+  
+  <% body do -%>
+  
+    <% right_panel do -%>
+    
+      <% panel :size => 'M', :title => 'Who uses nProv?' do -%>
+          <div class="float-left" style="padding: 5px;margin-left:30px">
+            <a href="http://www.amazon.com/"><img src="/images/amazon.jpg" style="border: solid 2px #78f" alt="Not Really" title="Just kidding.." /></a>
+          </div>
+          <div style="padding: 5px;">
+            <a href="#"><img src="/images/parature.jpg" style="border: solid 2px #78f" alt="No idea who this is.." title="Not really but I liked the logo" /></a>
+          </div>
+        <div class="align-center">
+          <a href="/advertise">Advertise Here</a>
+        </div>
+      <% end -%>
+
+      <% panel :size => 'M', :title => '<div class="float-right"><a href="/features" class="white">All Downloads &raquo;</a></div><div>nProv Downloads</div>' do -%>
+        <div class="MedPad OffWhiteBG">           
+          <a href="#">Current Stable Release</a> <small>(version 1.2b)</small><br />
+          <a href="#">2.0 Release Candidate</a> <small>(version 2.0RC3)</small><br />
+          <a href="#">Development Version</a> <small>(subversion access)</small><br />
+        </div>
+      <% end -%>
+      
+      <% panel :size => 'M', :title => 'nProv Newsletter' do -%>
+        <div class="InputArea">
+          <div>
+            <% form_for :newsletter_subscription, :url => newsletter_subscriptions_path do |nls| -%>
+              <b>Please enter your email address to subscribe to our informative and low volume community newsletter.</b>
+              <div class="align-center">
+                <img src="images/input_l_l.gif" alt="" /><%= nls.text_field :email, :class => 'InputBox', :id      => 'EmailBox', :value => 'Email Address...',
+                  :onclick => "if(document.getElementById('EmailBox').value == 'Email Address...') { document.getElementById('EmailBox').value = ''; }", 
+                  :onblur  => "if(document.getElementById('EmailBox').value == '') { document.getElementById('EmailBox').value = 'Email Address...'; }" %><input type="image" src="images/input_submit_l.gif" name="Submit" value="Subscribe" style="vertical-align: middle;"/>
+              </div>
+            <% end -%>
+          </div>
+        </div>
+      <% end -%>
+            
+    <% end -%>
+    
+    <% left_panel do -%>    
+      <div class="L">
+        <div class="LContainer">
+          <div class="LTitle">
+            <span class="T1F"><a href="#">Feature Request</a>&nbsp; <a href="#"><img src="/images/arrowupblue.gif" border="0" alt="Sort Ascending" /></a><img src="./images/dot.gif" width="4" border="0" alt="" /><a href="#"><img src="./images/arrowdownblue.gif" border="0" alt="Sort Descending" /></a></span>           
+            <span class="T4"><a href="#">Pledges</a>&nbsp; <a href="#"><img src="/images/arrowupblue.gif" border="0" alt="Sort Ascending" /></a><img src="./images/dot.gif" width="4" border="0" alt="" /><a href="#"><img src="./images/arrowdownblue.gif" border="0" alt="Sort Descending" /></a></span>
+          </div>
+          <div class="LBody">
+
+            <div class="Bg1" onmouseover="this.className = 'Highlight';" onmouseout="this.className = 'Bg1';" onclick="">
+                <span class="C1F"><a href="#">Enhanced Monitoring Options</a></span>
+                <span class="C4">$2,500</span>  
+            </div>
+
+            <div class="Bg0" onmouseover="this.className = 'Highlight';" onmouseout="this.className = 'Bg0';" onclick="">
+                <span class="C1F"><a href="#">Default Support for Ruby Scripts</a></span>
+                <span class="C4">$500</span>
+            </div>
+
+            <div class="Bg1" onmouseover="this.className = 'Highlight';" onmouseout="this.className = 'Bg1';" onclick="">
+                <span class="C1F"><a href="#">Sandbox Script Testing</a></span>
+                <span class="C4">$1,100</span>
+            </div>
+
+            <div class="Bg0" onmouseover="this.className = 'Highlight';" onmouseout="this.className = 'Bg0';" onclick="">
+                <span class="C1F"><a href="#">SMS Notification System</a></span>
+                <span class="C4">$2,100</span>
+            </div>
+
+            <div class="Bg1" onmouseover="this.className = 'Highlight';" onmouseout="this.className = 'Bg1';" onclick="">
+                <span class="C1F"><a href="#">Self Monitoring Clusters</a></span>
+                <span class="C4">$22,000</span>
+            </div>
+
+            <div class="Bg0" onmouseover="this.className = 'Highlight';" onmouseout="this.className = 'Bg0';" onclick="">
+                <span class="C1F"><a href="#">Site design that isn't stolen from npost.com</a></span>
+                <span class="C4">Priceless</span>
+            </div>
+
+            <div class="Bg1" onmouseover="this.className = 'Highlight';" onmouseout="this.className = 'Bg1';" onclick="">
+                <span class="C1F"><a href="#">Self Monitoring Clusters</a></span>
+                <span class="C4">$22,000</span>
+            </div>
+    
+            <div class="MedPad LargeFoot">
+              <div class="float-right">
+                <a href="/rss/pledge" rel="alternate" type="application/rss+xml"><img src="./images/feed-icon16x16.png" alt="" class="align-middle"/></a>&nbsp;
+              </div>
+              <div>
+                <a href="/pledges/new">Pledge your support</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="L">
+        <div class="LContainer">
+          <div class="LTitle">
+            <div class="float-right">
+              <a href="/features" class="white">All Developers &raquo;</a>
+            </div>
+            <div>
+              Developer Spotlight
+            </div>
+          </div>
+          <div class="LBody">
+            <div class="MedPad OffWhiteBG">
+              <div class="float-left">
+                <a href="#"><img src="http://www.npost.com/images/interviews/dave_rice_60.jpg" border="0" align="left" alt="Picture of Dave Rice, CEO of Dipiti" class="IntImage" /></a>
+              </div>
+              <div>
+                <b>John Doe</b> of <a href="#"><b>Some Company</b></a><br/>
+                Total Pledges Completed: 123<br />
+                <i>Speaks in binary, and handles most of the nProv script integration.</i>
+              </div>
+            </div>
+            <div class="MedPad WhiteBG">
+
+              <div class="float-left">
+                <a href="#"><img src="http://www.npost.com/images/interviews/jonathan_sposato_60.jpg" border="0" align="left" alt="Picture of Jonathan Sposato, CEO of Picnik" class="IntImage"/></a>
+              </div>
+              <div>
+                <b>Jack Doe</b> of <a href="#"><b>Another Company</b></a><br/>
+                Total Pledges Completed: 83<br />
+                <i>Linux deployment guru and load balancing genius.</i>
+              </div>
+            </div>
+            <div class="MedPad LargeFoot" style="background:#fff">
+              <div class="float-right">
+                <a href="/rss/developer" rel="alternate" type="application/rss+xml"><img src="./images/feed-icon16x16.png" alt="" class="align-middle"/></a>&nbsp;
+              </div>
+              <div>
+                <a href="/developers">Become a developer</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end -%>
+  <% end -%>
+  
+<% end -%>
+
+<div id="Footer">
+  <div id="FooterContainer">
+    <div class="FooterInfoBody">
+      <!-- <div class="FooterInfoCont">
+        <div class="FooterInfo"> -->
+          <div class="float-right FooterInfoNoMargin">
+            <div class="LargeFont Bold DarkBlue">nProv Scripts</div>
+            <div class="InfoText">
+              nProv Scripts provide a dynamic system of automatically configuring your AMI instances
+              when they are initialized.  Write your scripts in any language you prefer or select from
+              a growing selection of predefined scripts to do your bidding.
+              <div class="float-right">
+                <br /><br />
+                <a href="/learn">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="float-right FooterInfoMargin">
+            <div class="LargeFont Bold DarkBlue">Cluster Management</div>
+            <div class="InfoText">
+              with nProv, you have complete control of your AMI clusters. Using proven open-source monitoring solutions,
+              you can manage, monitor, and rest assured that your architecture will provide the high availability that
+              you require. Cluster instances can also be configured to replicate based on CPU load, memory usage, and 
+              traffic. 
+              <div class="float-right">
+                <a href="/learn">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="FooterInfoMargin">
+            <div class="LargeFont Bold DarkBlue">Self Healing</div>
+            <div class="InfoText">
+              nProv uses Heartbeat to monitor the status of every instance 24 hours a day. If a node goes down, nProv
+              will relaunch your instance, configure it, and make it available again. nProv also provides DNS based
+              fail-over along with pre-configured instances for tasks such as HAProxy.<br /><br />
+              <div class="float-right">
+                <a href="/learn">Learn More</a>
+              </div>
+              <br />
+            <!-- </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <br />
+    <a href="/">nProv</a> is an open-source cloud management solution for deployment and scaling within the Amazon EC2 cloud.<br />  Our goal is to provide a solid management platform which rivals commercial solutions costing several thousand dollars.
+    <br /><br />
+    <b>Recent Articles:</b> 
+    <a href="/articles/simplified_management" title="Simplified scaling with nProv">Simplified scaling with nProv</a>, 
+    <a href="/articles/10_things_about_ec2" title="10 Things you should know about EC2">10 Things you should know about EC2</a>, 
+    <a href="/articles/self_healing_ec2" title="Self healing EC2">Self Healing EC2</a>, 
+    <a href="/articles/nprov_scripts_demystified" title="nProv Scripts Demystified">nProv Scripts Demystified</a>, 
+    <a href="/articles/how_to_contribute_to_nprov" title="How to contribute to nProv">How to contribute to nProv</a>
+  </div>
+</div>

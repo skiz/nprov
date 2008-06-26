@@ -1,0 +1,96 @@
+<% content_for :head do -%>
+  <script src="/javascripts/codepress/codepress.js" type="text/javascript"></script>
+<% end -%>
+
+<% toolbar do -%>
+ <!-- No Menubar Items -->
+<% end -%>
+
+<% layout do -%>
+  <% body do -%>
+  
+    <% banner do -%>
+    	Creating nProv Scripts is an easy task. Determine the filename of your script, and which configuration bucket
+    	you would like to store your script in. Select your preferred syntax highlighting, and start writing. Once
+    	you are happy with your modifications, click 'Save'. Don't worry about overwriting your existing scripts, we
+    	keep backups of every version you have saved. You may also add and review all of your variables in the tools
+    	area on the right side.    
+    <% end -%>
+    
+    <% right_panel do -%>
+      <% panel :size => 'M', :title => '<div class=\'float-right\'><a href="#" class="white" >Full List &raquo;</a></div><div>Available Variables</div>' do -%>
+        <div class="MedPad OffWhiteBG">
+          <table class="attrlist" border="0" cellspacing="2" cellpadding="5">
+            <tr>
+              <th>HOST_IP</th><td>Dynamically Assigned</td>
+            </tr>
+            <tr>
+              <th>LOG_SERVER_IP</th><td>10.1.44.23</td>
+            </tr>
+            <tr>
+              <th>AWS_SECRET_KEY</th><td>****PROTECTED*****</td>
+            </tr>
+            <tr>
+              <th>AWS_ACCOUNT_ID</th><td>123456789012</td>
+            </tr>
+            <tr>
+              <th>AWS_ACCESS_KEY</th><td>ERKhSh45U2345-q324g345345</td>
+            </tr>
+          </table>
+          <div class="float-right"><a href="#">New Variable</a></div>
+          <div><a href="#">Help With Variables</a></div>
+        </div>
+      <% end -%>
+      
+      <% panel :size => 'M', :title => '<div class=\'float-right\'><a href="#" class="white" >Full List &raquo;</a></div><div>Recently Modified</div>' do -%>
+        (10 min ago) <a href="#">/mysql_config/automatic_backup.pl</a><br />
+        (2 days ago) <a href="#">/boot_config/s3_extractor.rb</a>
+      <% end -%>
+      
+      <% panel :size => 'M', :title => 'Additional Resources' do %>
+        <div class="MedPad OffWhiteBG">
+          Pwn3d
+        </div>
+      <% end%>
+
+    <% end -%>
+    
+    <% left_panel do -%>
+
+      <%- editor_title = '<div class=\'float-right\' style="vertical-align:middle;margin-top:-3px">
+            Highlight&nbsp;
+            <select name="lang_select" id="lang_select" onchange="myCpWindow.edit(myCpWindow.getCode(), getElementById(\'lang_select\').value)" size="1" style="font-size:0.85em">
+             <option value="text">Plain Text</option>
+             <option value="php">PHP</option>
+             <option value="ruby">Ruby</option>
+             <option value="perl">Perl</option>
+             <option value="java">Java</option>
+             <option value="html">HTML</option>
+             <option value="sql">SQL</option>
+             <option value="generic">Generic</option>
+             <option value="javascript">Javascript</option>
+            </select>
+          </div>
+          <div>Create a new script</div>' -%>
+
+      <% panel :size => 'L', :title => editor_title do -%>
+        <div class="LargePad NearWhiteBG">
+          <% form_for :script do -%>
+            <div class="InputArea">
+              <label>Bucket:</label>
+              <img src="/images/input_l_l.gif" alt="" /><select name="bucket" id="bucket" size="1" class="InputBox" style="width:135px;font-size:12px;height:32px;vertical-align:middle;line-height:33px">
+                <option value="mysql_cfg">mysql_config</option>
+                <option value="proxy_cfg">proxy_config</option>
+              </select><img src="/images/input_l_r.gif" alt="" />
+              <label>&nbsp;Filename:</label>
+              <img src="/images/input_l_l.gif" alt="" /><%= text_field_tag 'name','', :class => 'InputBox', :style => 'width:200px' %><img src="/images/input_l_r.gif" alt="" /><br />
+            </div>
+            <textarea id="myCpWindow" class="codepress ruby" rows="30" cols="64"></textarea>
+          <% end -%>
+        </div>
+      <% end -%>
+
+    <% end -%>
+    
+  <% end -%>
+<% end -%>
